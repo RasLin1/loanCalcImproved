@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+	<title>Lånekalkyl</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<script defer src="js/javascript.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1 class="text-center mb-3 mt-3">Lånekalkyl</h1>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+<div class="row">
+<div id="calculator-page" class="col-4">
+
+	
+	
+		<form id="calc-form">
+			<label class="input calc-page-item">Lånebelopp i €:</label><br>
+			<input class="input calc-page-item" type="number" id="lanebelopp" ></input>
+			<br><br>
+	
+			<label class="input calc-page-item">Ränta i %:</label><br>
+			<input class="input calc-page-item" type="number" id="ranta" ></input>
+			<br><br>
+	
+			<label class="input calc-page-item">Avbetalningstid i månader:</label><br>
+			<input class="input calc-page-item" type="number" id="avbetalningstid" ></input>
+			<br><br>
+
+			<label class="input calc-page-item" id="lanetyp">Lånetyp:</label><br>
+			<input class="input calc-page-item" type="radio" name="lanetyp" onclick="laneTypSet(1)" value="0"></input>
+			<label>Rak Avbetalning</label><br>
+			<input class="input" type="radio" name="lanetyp" onclick="laneTypSet(2)" value="1"></input>
+			<label>Anuitet</label><br><br>
+
+			<label class="input calc-page-item">Fast månadsavgift i €:</label><br>
+			<input class="input calc-page-item" type="number" id="fast-manadsavgift" ></input><br><br>
+		
+			<label class="input calc-page-item">Öppningsavgift i €:</label><br>
+			<input class="input calc-page-item" type="number" id="oppningsavgift" ></input><br><br>
+		
+			<input type="submit" id="calcbtn" onclick="calculate()"></input>
+		</form>
+</div>
+
+
+
+<div id="long-answer-page" class="col-8">
+    <div class="container">
+        <div class="row">
+        <div id="manad" class="col">
+            <span>Månad</span><br><br>
+        </div>
+        
+        <div id="manads-amortering"  class="col">
+            <span>Amortering</span><br><br>
+        </div>
+        
+        <div id="manads-ranta" class="col">
+            <span>Ränta</span><br><br>
+        </div>
+
+        <div id="effektiv-ranta"  class="col">
+            <span>Kvar på lånet</span><br><br>
+        </div>
+        
+        <div id="manads-betalning"  class="col">
+            <span>Månadsrat</span><br><br>
+        </div>
+        
+        <div id="kvar-lan"  class="col">
+            <span>Kvar på lånet</span><br><br>
+        </div>
+    </div>
+    </div>
+</div>
+
+</div>
+
+<!--<div id="quick-answer-page" class="container">
+    <div class="row">
+        <div class="col">
+            <span id="manadsrat"></span>
+        </div>
+        <div class="col">
+            <span id="effektiv-ranta"></span>
+        </div>
+        <div class="col">
+            <span id="totala-avgifter-och-ranta"></span>
+        </div>
+    </div>
+</div>-->
+
+</div>
+
+
+</body>
+</html>
